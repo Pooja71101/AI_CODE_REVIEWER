@@ -41,7 +41,8 @@ ALGORITHM = "HS256"
 # CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["https://ai-code-reviewer-1r0dyxxru-py878685gmailcoms-projects.vercel.app",
+        "http://localhost:5173"],  # for local dev"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
