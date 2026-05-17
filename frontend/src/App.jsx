@@ -32,7 +32,7 @@ function App() {
     try {
 
       const response = await fetch(
-        "https://ai-code-reviewer-7g6o.onrender.com",
+        "https://ai-code-reviewer-7g6o.onrender.com/reviews",
         // "http://127.0.0.1:8000/reviews",
         {
           headers: {
@@ -141,7 +141,7 @@ function App() {
     try {
 
       const response = await fetch(
-        "https://ai-code-reviewer-7g6o.onrender.com",
+        "https://ai-code-reviewer-7g6o.onrender.com/review",
         // "http://127.0.0.1:8000/review",
         {
           method: "POST",
