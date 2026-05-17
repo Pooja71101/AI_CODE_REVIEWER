@@ -8,7 +8,7 @@ from models import Review, User
 from database import SessionLocal, engine
 # from models import Review
 from database import Base
-from passlib.context import CryptContext
+# from passlib.context import CryptContext
 from jose import jwt
 from datetime import datetime, timedelta
 import bcrypt
@@ -30,10 +30,10 @@ app = FastAPI()
 Base.metadata.create_all(bind=engine)
 
 
-pwd_context = CryptContext(
-    schemes=["bcrypt"],
-    deprecated="auto"
-)
+# pwd_context = CryptContext(
+#     schemes=["bcrypt"],
+#     deprecated="auto"
+# )
 
 SECRET_KEY = "mysecretkey"
 ALGORITHM = "HS256"
