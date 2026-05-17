@@ -54,6 +54,11 @@ function App() {
   // useEffect(() => {
   //   fetchHistory();
   // }, []);
+  // Wake up Render server on app load
+  useEffect(() => {
+    fetch("https://ai-code-reviewer-7g6o.onrender.com/")
+      .catch(() => {});
+  }, []);
    useEffect(() => {
 
     if (token) {
