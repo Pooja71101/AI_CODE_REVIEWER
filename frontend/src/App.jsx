@@ -32,7 +32,8 @@ function App() {
     try {
 
       const response = await fetch(
-        "http://127.0.0.1:8000/reviews",
+        "https://ai-code-reviewer-7g6o.onrender.com",
+        // "http://127.0.0.1:8000/reviews",
         {
           headers: {
             Authorization: token,
@@ -72,7 +73,8 @@ function App() {
         : "signup";
 
       const response = await fetch(
-        `http://127.0.0.1:8000/${endpoint}`,
+        `https://ai-code-reviewer-7g6o.onrender.com/${endpoint}`,
+        // `http://127.0.0.1:8000/${endpoint}`,
         {
           method: "POST",
           headers: {
@@ -134,7 +136,8 @@ function App() {
     try {
 
       const response = await fetch(
-        "http://127.0.0.1:8000/review",
+        "https://ai-code-reviewer-7g6o.onrender.com",
+        // "http://127.0.0.1:8000/review",
         {
           method: "POST",
           headers: {
