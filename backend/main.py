@@ -23,8 +23,8 @@ genai.configure(
     api_key=os.getenv("GEMINI_API_KEY")
 )
 
-# model = genai.GenerativeModel("gemini-1.5-flash")
-model = genai.GenerativeModel("gemini-2.5-flash-lite")
+model = genai.GenerativeModel("gemini-1.5-flash")
+# model = genai.GenerativeModel("gemini-2.5-flash-lite")
 
 app = FastAPI()
 Base.metadata.create_all(bind=engine)
@@ -213,7 +213,8 @@ def review_code(request: CodeRequest, authorization: str = Header(None)):
 
     except Exception as e:
         return {
-            "error": str(e)
+            # "error": str(e)
+            "error": str(e), "review": None
         }
     
 @app.get("/reviews")
