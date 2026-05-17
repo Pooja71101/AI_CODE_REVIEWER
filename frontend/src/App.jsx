@@ -43,7 +43,8 @@ function App() {
 
       const data = await response.json();
 
-      setHistory(data.reverse());
+      // setHistory(data.reverse());
+      setHistory(Array.isArray(data) ? data.reverse() : []);
 
     } catch (error) {
 
