@@ -11,6 +11,7 @@ from database import Base
 from passlib.context import CryptContext
 from jose import jwt
 from datetime import datetime, timedelta
+import bcrypt
 
 from dotenv import load_dotenv
 import os
@@ -77,9 +78,10 @@ def signup(user: UserRequest):
             "error": "User already exists"
         }
 
-    hashed_password = pwd_context.hash(
-        user.password
-    )
+    # hashed_password = pwd_context.hash(
+    #     user.password
+    # )
+    hashed_password = bcrypt.hashpw(user.password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
 
     new_user = User(
         username=user.username,
@@ -113,10 +115,11 @@ def login(user: UserRequest):
             "error": "User not found"
         }
 
-    valid_password = pwd_context.verify(
-        user.password,
-        existing_user.password
-    )
+    # valid_password = pwd_context.verify(
+    #     user.password,
+    #     existing_user.password
+    # )
+    valid_password = bcrypt.checkpw(user.password.encode('utf-8'), existing_user.password.encode('utf-8'))
 
     if not valid_password:
 
